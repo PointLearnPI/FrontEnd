@@ -3,7 +3,7 @@ import Footer from './componentes/estaticos/footer/Footer';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
-import Contato from './paginas/Contato';
+import Contato from './paginas/contato/Contato';
 import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
