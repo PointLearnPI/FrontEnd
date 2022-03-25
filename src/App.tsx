@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './componentes/estaticos/footer/footer';
+import Footer from './componentes/estaticos/footer/Footer';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';

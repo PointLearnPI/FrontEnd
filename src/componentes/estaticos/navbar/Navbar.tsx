@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import '../navbar/Navbar.css';
+
 function Navbar() {
     return (
         <>
