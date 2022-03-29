@@ -18,24 +18,28 @@ function Navbar() {
                     <Box display="flex" justifyContent="start">
                         <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                                <Link className='link' to="/home"> Home </Link>
+                                <Link className='link' to="/home"> Inicio </Link>
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                <Link className='link' to="/sobrenos"> Sobre Nós </Link>
-                            </Typography>
-                        </Box>
-                        <Box mx={2} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                <Link className='link' to="/login"> Login</Link>
-                            </Typography>
-                        </Box>
+
                         <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 <Link className='link' to="/produtos">Cursos</Link>
                             </Typography>
                         </Box>
+
+                        <Box mx={2} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='link' to="/sobrenos"> Sobre Nós </Link>
+                            </Typography>
+                        </Box>
+
+                        <Box mx={2} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='link' to="/login"> Entrar </Link>
+                            </Typography>
+                        </Box>
+                       
                         <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 <Link className='link' to="/login">Sair</Link>

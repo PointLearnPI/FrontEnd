@@ -15,9 +15,11 @@ function App() {
       <Navbar />
       <Switch>
         <div style={{ minHeight: '100vh' }}>
+
           <Route exact path='/'>
             <Login />
           </Route>
+
           <Route path='/login'>
             <Login />
           </Route>
@@ -29,6 +31,7 @@ function App() {
           <Route path='/sobrenos'>
             <SobreNos/>
           </Route>
+          
         </div>
 
       </Switch>
