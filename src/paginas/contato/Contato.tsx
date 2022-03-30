@@ -7,11 +7,12 @@ import { Typography, Box, Grid, Button } from '@material-ui/core';
 import Carousel from '../../componentes/carousel/Carousel';
 
 
+
 import './Contato.css';
 
 function Contato() {
     return (
-<>
+        <>
             <Grid className='margin' container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Carousel />
