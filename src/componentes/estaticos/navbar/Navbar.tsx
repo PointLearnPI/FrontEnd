@@ -1,12 +1,14 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import '../navbar/Navbar.css';
+import { Link } from 'react-router-dom';
+import '../../../paginas/home/Home'
 
 function Navbar() {
     return (
         <>
-            <AppBar className='corMenu' position="static">
-                <Toolbar variant="dense">
+            <AppBar className='corMenu' position="relative">
+                <Toolbar variant="regular">
                     <Box style={{ cursor: "pointer" }} >
                         <Typography variant="h5" color="inherit">
                             LearnPointLogo
@@ -14,33 +16,32 @@ function Navbar() {
                     </Box>
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                                Home
+                                <Link className='link' to="/home"> Home </Link>
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                                Entre em contato
+                                <Link className='link' to="/sobrenos"> Sobre Nós </Link>
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                                Fazer login
+                                <Link className='link' to="/login"> Login</Link>
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                                Visualizar produtos
+                                <Link className='link' to="/produtos">Cursos</Link>
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={2} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                               Sair
+                                <Link className='link' to="/login">Sair</Link>
                             </Typography>
                         </Box>
                     </Box>
-
                 </Toolbar>
             </AppBar>
         </>

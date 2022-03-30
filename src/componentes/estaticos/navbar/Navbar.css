@@ -1,3 +1,64 @@
 .corMenu {
-    background-color: blueviolet!important;
+    height: 0px;
+    _padding-right: 1px;
+    list-style-type: none;
+    float: left;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+
+.caixa-search {
+    margin-top: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    height: 60px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.caixa-search:hover>.caixa-texto {
+    width: 440px;
+    padding: 0 6px;
+}
+
+.caixa-search:hover>.botao-search {
+    background-color: #fff !important;
+    margin-left: 10px !important;
+}
+
+.botao-search {
+    color: #e84118 !important;
+    float: right;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.caixa-texto {
+    border: none;
+    background-color: rgb(0, 0, 0);
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #fff;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.4s;
+    line-height: 55px;
+    width: 0px;
+    cursor: pointer;
 }

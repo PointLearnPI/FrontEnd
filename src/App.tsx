@@ -1,11 +1,12 @@
 import React from 'react';
 import Footer from './componentes/estaticos/footer/Footer';
 import Navbar from './componentes/estaticos/navbar/Navbar';
-import Home from './paginas/home/Home'
+import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import SobreNos from './paginas/sobrenos/SobreNos';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path='/home'>
             <Home />
+          </Route>
+          <Route path='/sobrenos'>
+            <SobreNos/>
           </Route>
         </div>
       </Switch>

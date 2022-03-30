@@ -1,7 +1,22 @@
-.logos{
-    font-Size: 60 !important; 
+.footer {
+    background-color: #6b6b6b69 !important;
+    min-width: calc(130vh - 29px);
+}
+
+.logos {
+    font-Size: 60px !important;
     color: white;
 }
-.titulo1{
+
+h .titulo1 {
     color: white;
+}
+
+.site {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.footer2 {
+    background-color: #6b6b6b69 !important;
 }
