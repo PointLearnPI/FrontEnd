@@ -4,7 +4,7 @@ interface UserLogin {
     nomeu: string;
     usuario: string;
     senha: string;
-    token?: string| null
+    token?: string | null
 }
 
 export default UserLogin;
