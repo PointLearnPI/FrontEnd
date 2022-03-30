@@ -8,7 +8,7 @@ function Login() {
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid alignItems='center' xs={6}>
-                <Box paddingX={20}>
+                <Box paddingTop={20}>
                     <form>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
                         <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
@@ -29,7 +29,7 @@ function Login() {
                     </Box>
                 </Box>
             </Grid>
-            <Grid xs={6} className='imagem'>
+            <Grid xs={6} className='imagem' >
 
             </Grid>
         </Grid>

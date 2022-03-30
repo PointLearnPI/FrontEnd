@@ -21,20 +21,16 @@ function App() {
           <Route path='/login'>
             <Login />
           </Route>
+          
           <Route path='/home'>
             <Home />
           </Route>
-<<<<<<< HEAD
+
           <Route path='/sobrenos'>
             <SobreNos/>
           </Route>
         </div>
-=======
-       <Route path='/contato'>
-            <Contato />
-          </Route>
-          </div>
->>>>>>> 2ca8c9f281ff5072ae9bfb661137010797595786
+
       </Switch>
       <Footer />
     </Router>
