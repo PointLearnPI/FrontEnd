@@ -10,9 +10,7 @@ function Navbar() {
             <AppBar className='corMenu' position="relative">
                 <Toolbar variant="regular">
                     <Box style={{ cursor: "pointer" }} >
-                        <Typography variant="h5" color="inherit">
-                            LearnPointLogo
-                        </Typography>
+                        <img className='logo' src="https://i.imgur.com/wUJX9nV.jpg" alt="" />
                     </Box>
 
                     <Box display="flex" justifyContent="start">
