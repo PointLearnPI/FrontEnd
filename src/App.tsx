@@ -3,11 +3,12 @@ import Footer from './componentes/estaticos/footer/Footer';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
-import Contato from './paginas/contato/Contato';
+
 import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import SobreNos from './paginas/sobrenos/SobreNos';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
       <Navbar />
       <Switch>
         <div style={{ minHeight: '100vh' }}>
+
           <Route exact path='/'>
             <Login />
           </Route>
+
           <Route path='/login'>
             <Login />
           </Route>
@@ -29,6 +32,11 @@ function App() {
           <Route path='/sobrenos'>
             <SobreNos/>
           </Route>
+
+          <Route path='/cadastrousuario'>
+            <CadastroUsuario/>
+          </Route>
+          
         </div>
 
       </Switch>

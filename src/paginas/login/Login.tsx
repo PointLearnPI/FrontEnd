@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
+import useLocalStorage from 'react-use-localstorage';
+import { login } from '../../service/Service';
+import UserLogin from '../../models/UserLogin';
 
 function Login() {
+    let history = useHistory();
+    const [token, setToken] = useLocalStorage('token');
+    const [userLogin, setUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            nomeu: '',
+            usuario: '',
+            senha: '',
+            token: ''
+        }
+        )
+
+        function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+            setUserLogin({
+                ...userLogin,
+                [e.target.name]: e.target.value
+            })
+        }
+
+            useEffect(()=>{
+                if(token != ''){
+                    history.push('/home')
+                }
+            }, [token])
+
+        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+            e.preventDefault();
+            try{
+                await login(`/usuarios/logar`, userLogin, setToken)
+
+                alert('Login com sucesso!');
+            }catch(error){
+                alert('Dados do usuário inconsistentes. Erro ao logar!');
+            }
+        }
 
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
@@ -16,7 +55,7 @@ function Login() {
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/home' className='text-decorator-none'>
                                 <Button type='submit' variant='contained' color='primary'>
-                                    Logar
+                                    Entrar
                                 </Button>
                             </Link>
                         </Box>
@@ -25,7 +64,9 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
+                        <Link to='/cadastrousuario'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                        </Link>
                     </Box>
                 </Box>
             </Grid>
