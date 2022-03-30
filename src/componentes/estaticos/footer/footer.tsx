@@ -25,7 +25,7 @@ function Footer() {
                     </Box>
                     <Box className='footer2' style={{ height: "60px" }}>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom className='titulo1' >© 2022 Learnpoint:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom className='titulo1' >Â© 2022 Learnpoint:</Typography>
                         </Box>
                         <Box>
                             <a className='site' target="_blank" href="https://brasil.generation.org">
