@@ -4,11 +4,12 @@ import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 
-import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Carrossel from './paginas/sobrenos/SobreNos';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import CadastroProduto from './componentes/produtos/cadastrarProdutos/CadastroProduto';
+import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProdutos';
 
 function App() {
   return (
@@ -35,6 +36,18 @@ function App() {
 
           <Route path='/cadastrousuario'>
             <CadastroUsuario/>
+          </Route>
+
+          <Route exact path='/formularioProduto'>
+            <CadastroProduto/>
+          </Route>
+
+          <Route exact path='/formularioProdtudo/id'>
+            <CadastroProduto />
+          </Route>
+
+          <Route path='/deletarProduto/id'>
+            <DeletarProduto />
           </Route>
           
         </div>

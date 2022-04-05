@@ -10,7 +10,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 function CadastroProduto() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
-    const [categoria, setCategoria] = useState<Categoria[]>([])
+    const [categorias, setCategorias] = useState<Categoria[]>([])
     const [token, setToken] = useLocalStorage('token');
 
     useEffect(() => {
@@ -44,14 +44,14 @@ function CadastroProduto() {
     }, [categoria])
 
     useEffect(() => {
-        getCategoria()
+        getCategorias()
         if (id !== undefined) {
             findByIdProduto(id)
         }
     }, [id])
 
-    async function getCategoria() {
-        await busca('/categoria', setCategoria, {
+    async function getCategorias() {
+        await busca('/categoria', setCategorias, {
             headers: {
                 'Authorization': token
             }
