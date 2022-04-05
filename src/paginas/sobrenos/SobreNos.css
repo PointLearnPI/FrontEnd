@@ -1,5 +1,5 @@
 .texto1 {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .tminput {
@@ -7,5 +7,9 @@
 }
 
 .textosn {
-    font-size: 20px;
+    font-size: 16px;
+}
+
+.margin {
+    margin-top: 15%;
 }

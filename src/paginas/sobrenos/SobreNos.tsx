@@ -1,44 +1,67 @@
 import React from 'react';
-import { Grid, Box, Typography, TextField, Button} from '@material-ui/core';
+import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import './SobreNos.css';
 import { Link } from 'react-router-dom';
+import Carousel from 'react-elastic-carousel';
 
-function SobreNos() {
+function Carrossel() {
+
+
+    var items = [
+        { img: "https://i.imgur.com/909XGXQ.jpg" }, /*Alessandro */
+        { img: "https://i.imgur.com/o8mZwxl.png" },/*Bruno*/
+        { img: "https://i.imgur.com/ZUjNJvH.png" },/*Denise */
+        { img: "https://i.imgur.com/rXr2DDR.jpg" },/*Domenica */
+        { img: "https://i.imgur.com/6rpIkSt.png" },/*Edu */
+        { img: "https://i.imgur.com/HZwiY7W.jpg" },/*Mayara */
+        { img: "https://i.imgur.com/ZUjNJvH.png" }, /*Natalia */
+    ]
     return (
-        
-         <Grid  container direction="row" justifyContent="center" alignItems="center">
-                <Grid alignItems="center" item xs={6}>
-                    <Box className= "textosn" paddingX= {20}  textAlign='center' >
-                    <h1>Sobre nós:</h1>
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque rerum facilis perferendis, voluptates neque iste laborum iure commodi atque fugit. Quisquam dolorum eveniet molestias inventore iure. Repellat dignissimos ipsa minus!
-                    </Box>
-                
-                </Grid>
 
-                <Grid alignItems="center" item xs={6} className='contato'>
-                <Box  paddingTop={20}  textAlign='center' >
-                <form className="tminput">
-                        <Typography variant='h5' gutterBottom color='textPrimary' component='h5' align='center' className='texto1'>Envie uma pergunta ou sugestão:</Typography>
-                        <TextField id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
-                        <TextField id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth />
-                        <TextField id='Assunto' label='Assunto' variant='outlined'  name='Assunto' margin='normal' fullWidth />
-                        <Box marginTop={2} textAlign='center'>
-                            <Link to='/home' className='text-decorator-none'>
-                                <Button type='submit' variant='contained' color='primary'>
-                                    Enviar
-                                </Button>
-                            </Link>
-                        </Box>
-                       
-                    </form>
-                    </Box>
-            </Grid>
-            </Grid>
+        <Grid container direction="row" alignItems="center">
+
+            <Box className="textosn" marginTop={20} marginLeft ={20}  marginRight={20} textAlign='left' >
+                <h3>Sobre nós:</h3>
+
+                Nosso projeto se constitui em um e-commerce de cursos profissionalizantes para jovens de todas as regiões, pensamos em abordar assuntos e temas, cujo conhecimento são necessários em todas as áreas de atuação do mercado.
+                Por nos preocuparmos com a acessibilidade da educação, inicialmente iremos oferecer grande parte de forma gratuita enquanto os pagos serão a preço de custo.
+                Para o futuro iremos retirar totalmente os cursos pagos de nossa plataforma e o pagamento começará ser efetuado a partir de pontos vindos de ações sociais com parceria com os eco pontos.
+                Assim, o projeto final  será a conversão de reciclagem em cursos profissionalizantes.
+
+            </Box>
+
+
+
             
+            <Box className="textosn" marginTop={10} marginLeft ={20}  marginRight={20} textAlign="left">
+             
+            <h3>Integrantes: </h3>
            
-        
+
+            
+            </Box >
+           
+            <Carousel  isRTL={false}>
+                {
+                     items.map(item => (
+                        <>
+                            <img src={item.img} alt="Item" />
+                        </>
+                    ))
+                }
+            </Carousel>
+            
+         
+
+            
+
+        </Grid>
     );
 }
 
 
-export default SobreNos;
+
+
+
+
+export default Carrossel;
