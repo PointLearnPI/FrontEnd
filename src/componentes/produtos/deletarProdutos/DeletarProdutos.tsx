@@ -4,7 +4,7 @@ import './DeletarPostagem.css';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
-import { buscaId, deleteId } from '../../../services/Service';
+import { buscaId, deleteId } from '../../../service/Service';
 
 function DeletarProduto() {
     let history = useHistory();

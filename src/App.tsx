@@ -4,12 +4,14 @@ import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 
+import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Carrossel from './paginas/sobrenos/SobreNos';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
-import CadastroProduto from './componentes/produtos/cadastrarProdutos/CadastroProduto';
-import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProdutos';
+import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
+import DeletarCategoria from './componentes/categorias/deletarCategoria/deletarCategoria';
+
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
           <Route path='/login'>
             <Login />
           </Route>
-          
+
           <Route path='/home'>
             <Home />
           </Route>
@@ -38,18 +40,17 @@ function App() {
             <CadastroUsuario/>
           </Route>
 
-          <Route exact path='/formularioProduto'>
-            <CadastroProduto/>
+          <Route exact path='/formularioCategoria'>
+            <CadastroCategoria />
           </Route>
 
-          <Route exact path='/formularioProdtudo/id'>
-            <CadastroProduto />
+          <Route exact path='/formularioCategoria/:id'>
+            <CadastroCategoria />
           </Route>
 
-          <Route path='/deletarProduto/id'>
-            <DeletarProduto />
+          <Route path='/deletarCategoria/:id'>
+            <DeletarCategoria />
           </Route>
-          
         </div>
 
       </Switch>
