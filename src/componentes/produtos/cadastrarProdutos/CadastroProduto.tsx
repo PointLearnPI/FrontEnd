@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
 import { useHistory, useParams } from 'react-router-dom';
-import Categoria from '../../../models/Categoria'; 
+import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
 
 import { busca, buscaId, post, put } from '../../../service/Service';
@@ -37,7 +37,7 @@ function CadastroProduto() {
         categoria: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
         setProduto({
             ...produto,
             categoria: categoria
