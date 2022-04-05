@@ -7,7 +7,7 @@ import Login from './paginas/login/Login';
 import { Grid } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import SobreNos from './paginas/sobrenos/SobreNos';
+import Carrossel from './paginas/sobrenos/SobreNos';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           </Route>
 
           <Route path='/sobrenos'>
-            <SobreNos/>
+            <Carrossel/>
           </Route>
 
           <Route path='/cadastrousuario'>
