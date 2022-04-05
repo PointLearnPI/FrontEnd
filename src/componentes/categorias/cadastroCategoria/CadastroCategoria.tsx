@@ -57,7 +57,7 @@ function CadastroCategoria() {
         if (id !== undefined) {
 
             try {
-                await put(`/Categoria`, categoria, setCategoria, {
+                await put('/categoria', categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
@@ -100,12 +100,12 @@ function CadastroCategoria() {
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro categoria</Typography>
                 <TextField
-                    value={categoria.descricaoc}
+                    value={categoria.nomec}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                    id="descricao"
-                    label="descricao"
+                    id="nomec"
+                    label="nomec"
                     variant="outlined"
-                    name="descricao"
+                    name="nomec"
                     margin="normal"
                     fullWidth
                 />

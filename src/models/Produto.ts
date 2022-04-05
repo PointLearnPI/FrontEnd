@@ -5,7 +5,7 @@ interface Produto {
     nomep:	string;
     descricao: string;
     preco:	number;
-    duracao: string;
+    duracao: number;
     categoria?: Categoria| null; 
 }
 

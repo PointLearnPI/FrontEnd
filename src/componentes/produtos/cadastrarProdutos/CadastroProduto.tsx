@@ -6,6 +6,7 @@ import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
 
 import { busca, buscaId, post, put } from '../../../service/Service';
+import Produto from '../../../models/Produto';
 
 function CadastroProduto() {
     let history = useHistory();
@@ -31,8 +32,8 @@ function CadastroProduto() {
         id: 0,
         nomep: '',
         descricao: '',
-        preço: '',
-        duracao: ''
+        preco: 0,
+        duracao: 0,
         categoria: null
     })
 
@@ -59,7 +60,7 @@ function CadastroProduto() {
     }
 
     async function findByIdProduto(id: string) {
-        await buscaId('/produtos/${id}', setProduto, {
+        await buscaId(`/produtos/${id}`, setProduto, {
             headers: {
                 'Authorization': token
             }
@@ -106,15 +107,15 @@ function CadastroProduto() {
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro de produtos</Typography>
-                <TextField value={produto.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={produto.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.nomep} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId('/categoria/${e.target.value}`, setCategoria, {
+                        onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
                             headers: {
                                 'Authorization': token
                             }
