@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
-import './DeletarPostagem.css';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
 import { buscaId, deleteId } from '../../../service/Service';
+import './DeletarProduto.css';
 
 function DeletarProduto() {
+
     let history = useHistory();
+
     const { id } = useParams<{id: string}>();
+
     const [token, setToken] = useLocalStorage('token');
+
     const [produtos, setProdutos] = useState<Produto>()
 
     useEffect(() => {
@@ -21,32 +25,40 @@ function DeletarProduto() {
     }, [token])
 
     useEffect(() =>{
-        if(id !== undefined){
+        if(id !== ''){
             findById(id)
         }
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/postagens/${id}`, setProdutos, {
+        buscaId(`/produto/${id}`, setProdutos, {
             headers: {
               'Authorization': token
             }
           })
         }
 
-        function sim() {
-            history.push('/produtos')
-            deleteId(`/produto/${id}`, {
-              headers: {
-                'Authorization': token
-              }
-            });
-            alert('Produto deletado com sucesso');
+        async function sim() {
+          history.push('/produtos')
+  
+          try {
+              await deleteId(`/produto/${id}`, {
+                  headers: {
+                      'Authorization': token
+                  }
+              });
+              
+              alert('Produto deletado com sucesso');
+              
+          } catch (error) {
+              alert('Erro ao deletar');
           }
-        
-          function nao() {
-            history.push('/produtos')
-          }
+  
+      }
+  
+      function nao() {
+          history.push('/produtos')
+      }
   return (
     <>
       <Box m={2}>
@@ -54,7 +66,7 @@ function DeletarProduto() {
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem:
+                Deseja deletar o produto:
               </Typography>
               <Typography color="textSecondary" >
               {produtos?.nomep}

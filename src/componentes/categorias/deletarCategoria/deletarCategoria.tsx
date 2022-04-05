@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-
 import Categoria from '../../../models/Categoria';
 import { buscaId, deleteId } from '../../../service/Service';
-
 import "./DeletarCategoria.css"
 
 function DeletarCategoria() {
@@ -16,7 +14,7 @@ function DeletarCategoria() {
 
     const [token, setToken] = useLocalStorage('token');
 
-    const [categoria, setCategoria] = useState<Categoria>()
+    const [categorias, setCategorias] = useState<Categoria>()
 
     useEffect(() => {
         if (token === "") {
@@ -33,7 +31,7 @@ function DeletarCategoria() {
     }, [id])
 
     async function findById(id: string) {
-        await buscaId(`/categorias/${id}`, setCategoria, {
+        await buscaId(`/categoria/${id}`, setCategorias, {
             headers: {
                 'Authorization': token
             }
@@ -44,7 +42,7 @@ function DeletarCategoria() {
         history.push('/categorias')
 
         try {
-            await deleteId(`/categorias/${id}`, {
+            await deleteId(`/categoria/${id}`, {
                 headers: {
                     'Authorization': token
                 }
@@ -72,7 +70,7 @@ function DeletarCategoria() {
                                 Deseja deletar a Categoria:
                             </Typography>
                             <Typography color="textSecondary">
-                                { categoria?.descricaoc }
+                                { categorias?.descricaoc }
                             </Typography>
                         </Box>
                     </CardContent>

@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage'
 
 import Categoria from '../../../models/Categoria'
-import { busca } from '../../../service/Service'
+import { busca, post } from '../../../service/Service'
 
 import './ListaCategoria.css'
 
@@ -24,7 +24,7 @@ function ListaCategoria() {
   }, [token])
 
   async function getCategorias() {
-    await busca("/categorias", setCategorias, {
+    await busca("/categoria", setCategorias, {
       headers: {
         'Authorization': token
       }
@@ -48,7 +48,7 @@ function ListaCategoria() {
                 </Typography>
 
                 <Typography variant="h5" component="h2">
-                  { categoria.descricaoc }
+                  { categoria.nomec }
                 </Typography>
 
               </CardContent>

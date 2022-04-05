@@ -9,8 +9,11 @@ import './App.css';
 import Carrossel from './paginas/sobrenos/SobreNos';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
-import DeletarCategoria from './componentes/categorias/deletarCategoria/deletarCategoria';
 import CadastroProduto from './componentes/produtos/cadastrarProdutos/CadastroProduto';
+import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
+import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
+import ListarProduto from './componentes/produtos/listarProdutos/ListarProduto';
+import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProduto';
 
 
 function App() {
@@ -40,6 +43,10 @@ function App() {
             <CadastroUsuario/>
           </Route>
 
+          <Route exact path='/categorias'>
+            <ListaCategoria />
+          </Route>
+
           <Route exact path='/formularioCategoria'>
             <CadastroCategoria />
           </Route>
@@ -52,6 +59,10 @@ function App() {
             <DeletarCategoria />
           </Route>
 
+          <Route exact path='/produtos'>
+            <ListarProduto />
+          </Route>
+
           <Route exact path='/formularioProduto'>
             <CadastroProduto />
           </Route>
@@ -61,7 +72,7 @@ function App() {
           </Route>
 
           <Route path='/deletarProduto/:id'>
-            <DeletarCategoria />
+            <DeletarProduto />
           </Route>
         </div>
 
