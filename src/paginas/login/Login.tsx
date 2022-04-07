@@ -1,14 +1,20 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../service/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { addToken, addId } from '../../store/tokens/actions';
 
 function Login() {
+
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+
+    const dispatch = useDispatch()
+
+    const [token, setToken] = useState('')
+    
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -19,6 +25,22 @@ function Login() {
         }
     )
 
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            nomeu: '',
+            usuario: '',
+            senha: '',
+            token: ''
+        })
+
+        useEffect(() => {
+            if (token !== "") {
+                dispatch(addToken(token))
+                history.push('/home')
+            }
+        }, [token])
+
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
         setUserLogin({
@@ -28,10 +50,17 @@ function Login() {
     }
 
     useEffect(() => {
-        if (token !== '') {
+        if (respUserLogin.token !== "") {
+
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))    
             history.push('/home')
         }
-    }, [token])
+    }, [respUserLogin.token])
+
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();

@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './componentes/estaticos/footer/Footer';
+import Footer from './componentes/estaticos/footer/footer';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
@@ -14,17 +14,16 @@ import DeletarCategoria from './componentes/categorias/deletarCategoria/deletarC
 import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
 import ListarProduto from './componentes/produtos/listarProdutos/ListarProduto';
 import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProduto';
-import {ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/React-Toastify.css';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store/store';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
     <Router>
-    <ToastContainer />
       <Navbar />
       <Switch>
         <div style={{ minHeight: '100vh' }}>

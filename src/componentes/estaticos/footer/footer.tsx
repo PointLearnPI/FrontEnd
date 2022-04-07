@@ -3,11 +3,20 @@ import GithubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import {Typography, Box, Grid } from '@material-ui/core';
 import './Footer.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function Footer() {
-    return (
-        <>
-            <Grid className='footer' container direction="row" justifyContent="center" alignItems="center">
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    )
+
+    var footerComponent
+
+    if (token !== "") {
+        footerComponent =
+        <Grid className='footer' container direction="row" justifyContent="center" alignItems="center">
                 <Grid className='footer' alignItems="center" item xs={12}>
                     <Box style={{ height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
@@ -35,6 +44,10 @@ function Footer() {
                     </Box>
                 </Grid>
             </Grid>
+    }
+    return (
+        <>
+            { footerComponent }
         </> 
         )
 }
