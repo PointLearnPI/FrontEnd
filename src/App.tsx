@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './componentes/estaticos/footer/footer';
+import Footer from './componentes/estaticos/footer/Footer';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
@@ -17,6 +17,7 @@ import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProdut
 import { Provider } from 'react-redux';
 import store from './store/store';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

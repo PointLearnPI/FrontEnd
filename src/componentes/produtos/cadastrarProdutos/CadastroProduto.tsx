@@ -119,7 +119,17 @@ function CadastroProduto() {
                     'Authorization': token
                 }
             })
-            alert('Produto cadastrado com sucesso');
+
+            toast.success('Produto Atualizado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         back()
 
