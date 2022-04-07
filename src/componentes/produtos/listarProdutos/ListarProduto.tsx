@@ -4,13 +4,20 @@ import Produto from '../../../models/Produto';
 import { busca } from '../../../service/Service'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListarProduto.css';
-import useLocalStorage from 'react-use-localstorage';
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListarProduto() {
+
   const [produtos, setProdutos] = useState<Produto[]>([])
-  const [token, setToken] = useLocalStorage('token');
+
   let history = useHistory();
+
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
+  
 
   useEffect(() => {
     if (token == "") {
@@ -38,7 +45,7 @@ function ListarProduto() {
     <>
       {
         produtos.map(post => (
-          <Box m={2} >
+          <Box m={2}>
             <Card variant="outlined">
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
@@ -66,14 +73,7 @@ function ListarProduto() {
                   <Link to={`/formularioProduto/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link to={`/deletarProduto/${post.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        deletar
+                        Comprar
                       </Button>
                     </Box>
                   </Link>

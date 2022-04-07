@@ -7,6 +7,8 @@ import Categoria from '../../../models/Categoria'
 import { busca, post } from '../../../service/Service'
 
 import './ListaCategoria.css'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokensReducer'
 
 function ListaCategoria() {
 
@@ -14,8 +16,9 @@ function ListaCategoria() {
 
   const [categorias, setCategorias] = useState<Categoria[]>([])
 
-  const [token, setToken] = useLocalStorage('token')
-
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
   useEffect(() => {
     if (token === "") {
       alert("Você precisa estar logado")

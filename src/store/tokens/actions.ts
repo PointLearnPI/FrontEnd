@@ -1,4 +1,4 @@
-export type Action = { type : "ADD_Token"; payload: string}
+export type Action = { type : "ADD_Token"|"ADD_ID"; payload: string}
 //exporto uma estrutura (type q impede q {...} seja extendido), a ação tem o proposito de ADD um token
 //a informação em si vai ser guardada dentro da payload
 
@@ -8,4 +8,9 @@ export const addToken = (token:string): Action => ({
     type: "ADD_Token",
     payload: token
 //type e payload são da estrutura da Action, e salvo o token dado como parametro na payload
+})
+
+export const addId = (id: string): Action =>({
+    type: "ADD_ID",
+    payload: id 
 })

@@ -14,10 +14,13 @@ import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarC
 import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
 import ListarProduto from './componentes/produtos/listarProdutos/ListarProduto';
 import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProduto';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <Navbar />
       <Switch>
@@ -79,6 +82,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+    </Provider>
   );
 }
 

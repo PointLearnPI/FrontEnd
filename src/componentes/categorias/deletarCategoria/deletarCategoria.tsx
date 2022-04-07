@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, deleteId } from '../../../service/Service';
 import "./DeletarCategoria.css"
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function DeletarCategoria() {
 
@@ -12,7 +13,9 @@ function DeletarCategoria() {
 
     const { id } = useParams<{ id: string }>();
 
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      )
 
     const [categorias, setCategorias] = useState<Categoria>()
 
