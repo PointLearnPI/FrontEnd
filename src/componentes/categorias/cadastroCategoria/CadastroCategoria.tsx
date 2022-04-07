@@ -1,15 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Button, Container, TextField, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom'
-
-
 import { buscaId, post, put } from '../../../service/Service'
 import Categoria from '../../../models/Categoria'
-
 import "./CadastroCategoria.css"
-import { toast } from 'react-toastify'
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokensReducer'
+import { toast } from 'react-toastify'
 
 function CadastroCategoria() {
 
@@ -165,4 +162,4 @@ function CadastroCategoria() {
     )
 }
 
-export default CadastroCategoria
+export default CadastroCategoria;
