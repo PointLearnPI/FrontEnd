@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
-
 import Categoria from '../../../models/Categoria'
 import { busca, post } from '../../../service/Service'
-
 import './ListaCategoria.css'
+import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokensReducer'
 
 function ListaCategoria() {
 
@@ -14,11 +14,22 @@ function ListaCategoria() {
 
   const [categorias, setCategorias] = useState<Categoria[]>([])
 
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+     });
       history.push("/login")
     }
   }, [token])

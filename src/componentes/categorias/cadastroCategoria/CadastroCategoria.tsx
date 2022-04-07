@@ -1,13 +1,15 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Button, Container, TextField, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
+
 
 import { buscaId, post, put } from '../../../service/Service'
 import Categoria from '../../../models/Categoria'
 
 import "./CadastroCategoria.css"
 import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokensReducer'
 
 function CadastroCategoria() {
 
@@ -15,7 +17,9 @@ function CadastroCategoria() {
 
     const { id } = useParams<{ id: string }>()
 
-    const [token, setToken] = useLocalStorage('token')
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,

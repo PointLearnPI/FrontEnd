@@ -16,10 +16,13 @@ import ListarProduto from './componentes/produtos/listarProdutos/ListarProduto';
 import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProduto';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/React-Toastify.css';
+import {Provider} from 'react-redux';
+import store from './store/store';
 
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
     <ToastContainer />
       <Navbar />
@@ -82,6 +85,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+    </Provider>
   );
 }
 
