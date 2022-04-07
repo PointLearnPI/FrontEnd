@@ -3,10 +3,12 @@ import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import '../navbar/Navbar.css';
 import { Link } from 'react-router-dom';
 import '../../../paginas/home/Home'
+import {toast} from 'react-toastify';
 
 function Navbar() {
     return (
         <>
+         
             <AppBar className='corMenu' position="relative">
                 <Toolbar variant="regular">
                     <Box style={{ cursor: "pointer" }} >
@@ -51,3 +53,11 @@ function Navbar() {
 }
 
 export default Navbar;
+
+function dispatch(arg0: any) {
+    throw new Error('Function not implemented.');
+}
+function addToken(arg0: string): any {
+    throw new Error('Function not implemented.');
+}
+

@@ -6,6 +6,7 @@ import SearchIcon from '@material-ui/icons/Search';
 function Home() {
     return (
         <>
+
             <Grid container className='background' justifyContent="center" alignItems="center" >
 
                 <Grid alignItems="center" item xs={12}>

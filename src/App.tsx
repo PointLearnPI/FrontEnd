@@ -10,15 +10,18 @@ import Carrossel from './paginas/sobrenos/SobreNos';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
 import CadastroProduto from './componentes/produtos/cadastrarProdutos/CadastroProduto';
-import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
+import DeletarCategoria from './componentes/categorias/deletarCategoria/deletarCategoria';
 import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
 import ListarProduto from './componentes/produtos/listarProdutos/ListarProduto';
 import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProduto';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/React-Toastify.css';
 
 
 function App() {
   return (
     <Router>
+    <ToastContainer />
       <Navbar />
       <Switch>
         <div style={{ minHeight: '100vh' }}>

@@ -7,6 +7,7 @@ import { buscaId, post, put } from '../../../service/Service'
 import Categoria from '../../../models/Categoria'
 
 import "./CadastroCategoria.css"
+import { toast } from 'react-toastify'
 
 function CadastroCategoria() {
 
@@ -24,7 +25,16 @@ function CadastroCategoria() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+             });
             history.push("/login")
         }
     }, [token])
@@ -68,7 +78,16 @@ function CadastroCategoria() {
                     }
                 })
 
-                alert('Categoria atualizado com sucesso');
+                toast.success('Categoria atualizada com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                 });
 
             } catch (error) {
                 console.log(`Error: ${error}`)
@@ -84,7 +103,16 @@ function CadastroCategoria() {
                     }
                 })
                 
-                alert('Categoria cadastrado com sucesso');
+                toast.success('Categoria cadastrada com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                 });
                 
             } catch (error) {
                 console.log(`Error: ${error}`)
