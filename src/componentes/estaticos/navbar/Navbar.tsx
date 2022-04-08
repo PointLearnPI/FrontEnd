@@ -58,6 +58,26 @@ function Navbar() {
                                 <Link className='link' to="/login">Sair</Link>
                             </Typography>
                         </Box>
+
+                        <Box mx={2} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='link' to="/formularioProduto"> Cadastrar produto </Link>
+                            </Typography>
+                        </Box>
+
+                        <Box mx={2} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='link' to="/formularioCategoria"> Cadastrar Categoria </Link>
+                            </Typography>
+                        </Box>
+
+                        <Box mx={2} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='link' to="/categorias"> Categoria </Link>
+                            </Typography>
+                        </Box>
+
+        
                     </Box>
                 </Toolbar>
             </AppBar>
