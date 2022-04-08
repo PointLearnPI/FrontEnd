@@ -1,10 +1,37 @@
-import React from 'react';
-import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { Grid, Box,} from '@material-ui/core';
 import './SobreNos.css';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function Carrossel() {
+    let history = useHistory();
+
+    
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
+    
+    useEffect(() => {
+      if (token == "") {
+          
+        toast.error('Você precisa estar logado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+          history.push("/login")
+  
+      }
+  }, [token])
 
 
     var items = [

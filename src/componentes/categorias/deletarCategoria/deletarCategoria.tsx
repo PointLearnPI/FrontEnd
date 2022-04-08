@@ -3,7 +3,7 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from '@materi
 import { useHistory, useParams } from 'react-router-dom';
 import Categoria from '../../../models/Categoria';
 import { buscaId, deleteId } from '../../../service/Service';
-import "./deletarCategoria.css"
+import "./DeletarCategoria.css"
 import { toast } from 'react-toastify';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';

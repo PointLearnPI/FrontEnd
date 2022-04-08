@@ -10,7 +10,7 @@ import Carrossel from './paginas/sobrenos/SobreNos';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import CadastroCategoria from './componentes/categorias/cadastroCategoria/CadastroCategoria';
 import CadastroProduto from './componentes/produtos/cadastrarProdutos/CadastroProduto';
-import DeletarCategoria from './componentes/categorias/deletarCategoria/deletarCategoria';
+import DeletarCategoria from './componentes/categorias/deletarCategoria/DeletarCategoria';
 import ListaCategoria from './componentes/categorias/listaCategoria/ListaCategoria';
 import ListarProduto from './componentes/produtos/listarProdutos/ListarProduto';
 import DeletarProduto from './componentes/produtos/deletarProdutos/DeletarProduto';
