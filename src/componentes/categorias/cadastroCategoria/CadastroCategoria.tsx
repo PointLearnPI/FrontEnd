@@ -58,6 +58,7 @@ function CadastroCategoria() {
         setCategoria({
             ...categoria,
             [e.target.name]: e.target.value,
+            produto:[{}]
             
         })
     }
