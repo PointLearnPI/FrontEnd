@@ -41,7 +41,7 @@ function CadastroCategoria() {
     }, [token])
 
     async function findById(id: string) {
-        await buscaId(`/categorias/${id}`, setCategoria, {
+        await buscaId(`/categoria/${id}`, setCategoria, {
             headers: {
                 'Authorization': token
             }
@@ -58,7 +58,6 @@ function CadastroCategoria() {
         setCategoria({
             ...categoria,
             [e.target.name]: e.target.value,
-            produto:[{}]
             
         })
     }
@@ -127,7 +126,7 @@ function CadastroCategoria() {
     }
 
     function back() {
-        history.push('/categorias')
+        history.push('/categoria')
     }
 
     return (

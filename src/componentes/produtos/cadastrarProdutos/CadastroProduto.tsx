@@ -20,7 +20,7 @@ function CadastroProduto() {
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      )
+    )
 
     useEffect(() => {
         if (token == "") {
@@ -143,37 +143,37 @@ function CadastroProduto() {
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro de produtos</Typography>
-                <TextField value={produto.nomep} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} 
-                id="nomep" 
-                label="Nome" 
-                variant="outlined" 
-                name="nomep" 
-                margin="normal" 
-                fullWidth />
+                <TextField value={produto.nomep} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                    id="nomep"
+                    label="Nome"
+                    variant="outlined"
+                    name="nomep"
+                    margin="normal"
+                    fullWidth />
 
-                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} 
-                id="descricao" 
-                label="Descrição" 
-                name="descricao" 
-                variant="outlined" 
-                margin="normal" 
-                fullWidth />
+                <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                    id="descricao"
+                    label="Descrição"
+                    name="descricao"
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth />
 
-                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} 
-                id="preco" 
-                label="Preço" 
-                variant="outlined" 
-                name="preco" 
-                margin="normal" 
-                fullWidth />
+                <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                    id="preco"
+                    label="Preço"
+                    variant="outlined"
+                    name="preco"
+                    margin="normal"
+                    fullWidth />
 
-                <TextField value={produto.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} 
-                id="duracao" 
-                label="Duração" 
-                name="duracao" 
-                variant="outlined" 
-                margin="normal" 
-                fullWidth />
+                <TextField value={produto.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                    id="duracao"
+                    label="Duração"
+                    name="duracao"
+                    variant="outlined"
+                    margin="normal"
+                    fullWidth />
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label"> Categoria </InputLabel>
