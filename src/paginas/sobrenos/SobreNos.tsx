@@ -14,25 +14,6 @@ function Carrossel() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
       );
-    
-    useEffect(() => {
-      if (token == "") {
-          
-        toast.error('Você precisa estar logado', {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: "colored",
-            progress: undefined,
-        });
-          history.push("/login")
-  
-      }
-  }, [token])
-
 
     var items = [
         { img: "https://i.imgur.com/909XGXQ.jpg" }, /*Alessandro */
