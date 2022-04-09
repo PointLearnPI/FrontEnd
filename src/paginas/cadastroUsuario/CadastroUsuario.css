@@ -5,3 +5,26 @@ textos2 {
 .btnCancelar {
     margin-right: 20px!important;
 }
+
+.backgroundCadastro{
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4) !important;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center !important;
+    min-height: calc(140vh - 64px);
+    min-width: calc(160vh - 30px);
+}
+
+.efeito-vidro {
+   
+    position: absolute;
+    text-align: center center !important;
+    bottom: 50px !important;
+    background: rgba(255,255,255,0.4) !important;
+    backdrop-filter: blur(1px) !important;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}

@@ -19,7 +19,8 @@
     padding: 9px;
 }
 
-.formularioCadastro {
-    border-radius: 200px!important;
-    border: 20px;
+.marca {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-left: 38%;
 }

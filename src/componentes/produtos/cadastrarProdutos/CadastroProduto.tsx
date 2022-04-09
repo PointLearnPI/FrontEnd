@@ -98,38 +98,56 @@ function CadastroProduto() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put('/produtos', produto, setProduto, {
-                headers: {
-                    'Authorization': token
-                }
-            })
-            toast.success('Produto Atualizado', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
-        } else {
-            post('/produto', produto, setProduto, {
-                headers: {
-                    'Authorization': token
-                }
-            })
+            try {
+                await put('/produtos', produto, setProduto, {
+                    headers: { 'Authorization': token }
+                })
+                toast.success('Curso Atualizado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
 
-            toast.success('Produto Atualizado com sucesso!', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
+            } catch (error) {
+                toast.error('Erro ao atualizar, verifique os campos',
+                    {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: "colored",
+                        progress: undefined,
+                    });
+            }
+
+        } else {
+            try {
+                await post('/produto', produto, setProduto, {
+                    headers: {
+                        'Authorization': token
+                    }
+
+                });
+            } catch (error) {
+                toast.error('Erro ao cadastrar, verifique os campos',
+                    {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: "colored",
+                        progress: undefined,
+                    });
+            }
         }
         back()
 
@@ -143,13 +161,17 @@ function CadastroProduto() {
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro de produtos</Typography>
-                <TextField value={produto.nomep} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                <TextField className='cadastrarProduto'
+                    value={produto.nomep}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                     id="nomep"
                     label="Nome"
                     variant="outlined"
                     name="nomep"
                     margin="normal"
-                    fullWidth />
+                    fullWidth
+                    placeholder='Minímo de 3 caracteres'
+                />
 
                 <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                     id="descricao"
@@ -157,7 +179,9 @@ function CadastroProduto() {
                     name="descricao"
                     variant="outlined"
                     margin="normal"
-                    fullWidth />
+                    fullWidth
+                    placeholder='Minímo de 30 caracteres'
+                />
 
                 <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                     id="preco"
@@ -191,8 +215,8 @@ function CadastroProduto() {
                             ))
                         }
                     </Select>
-                    <FormHelperText>Escolha uma categoria para prodtos</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <FormHelperText>Escolha uma categoria para produtos</FormHelperText>
+                    <Button className='botaoFinalizarPro' type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>
                 </FormControl>

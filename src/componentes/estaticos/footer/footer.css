@@ -1,22 +1,22 @@
 .footer {
-    background-color: #6b6b6b69 !important;
-    min-width: calc(130vh - 29px);
+    background-color: #033153 !important;
+    height: 85px !important;
 }
 
 .logos {
     font-Size: 60px !important;
     color: white;
+    padding: 10px !important;
 }
 
-h .titulo1 {
-    color: white;
+.logosFooter {
+    padding-left: 285% !important;
+    margin-top: -60px !important;
 }
 
-.site {
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.footer2 {
-    background-color: #6b6b6b69 !important;
+.textoFooter {
+   
+    color: #fbefcb;
+    margin-top: 25px !important;
+    margin-left: 6% !important;
 }

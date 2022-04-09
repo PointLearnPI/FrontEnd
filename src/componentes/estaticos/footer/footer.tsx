@@ -13,13 +13,13 @@ function Footer() {
     )
     return (
         <>
-            <Grid className='footer' container direction="row" justifyContent="center" alignItems="center">
-                <Grid className='footer' alignItems="center" item xs={12}>
-                    <Box style={{ height: "120px" }}>
-                        <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom className='titulo1'>Acompanhe as redes sociais do projeto </Typography>
+            <Grid className='footer' container direction="row" >
+                    <Box className='textoFooter' style={{ height: "60px" }}>
+                        <Box paddingTop={1}>
+                            <Typography variant="subtitle1" align="center" gutterBottom className='titulo1'>© 2022 Learnpoint. Todos os direitos reservados.</Typography>
                         </Box>
-                        <Box display="flex" alignItems="center" justifyContent="center">
+                        <Box>
+                        <Box className='logosFooter' display="flex">
                             <a href="https://instagram.com" target="_blank">
                                 <InstagramIcon className='logos' />
                             </a>
@@ -28,19 +28,9 @@ function Footer() {
                             </a>
         
                         </Box>
-                    </Box>
-                    <Box className='footer2' style={{ height: "60px" }}>
-                        <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom className='titulo1' >Â© 2022 Learnpoint:</Typography>
-                        </Box>
-                        <Box>
-                            <a className='site' target="_blank" href="https://brasil.generation.org">
-                                <Typography variant="subtitle2" gutterBottom  align="center">brasil.generation.org</Typography>
-                            </a>
                         </Box>
                     </Box>
                 </Grid>
-            </Grid>
         </> 
         )
 }

@@ -15,7 +15,7 @@ function Login() {
     const dispatch = useDispatch()
 
     const [token, setToken] = useState('')
-    
+
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -35,12 +35,12 @@ function Login() {
             token: ''
         })
 
-        useEffect(() => {
-            if (token !== "") {
-                dispatch(addToken(token))
-                history.push('/home')
-            }
-        }, [token])
+    useEffect(() => {
+        if (token !== "") {
+            dispatch(addToken(token))
+            history.push('/home')
+        }
+    }, [token])
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
@@ -57,7 +57,7 @@ function Login() {
             console.log("ID: " + respUserLogin.id)
 
             dispatch(addToken(respUserLogin.token))
-            dispatch(addId(respUserLogin.id.toString()))    
+            dispatch(addId(respUserLogin.id.toString()))
             history.push('/home')
         }
     }, [respUserLogin.token])
@@ -100,8 +100,7 @@ function Login() {
                         </Box>
                         <Box paddingX={10} >
                             <div className='formularioEntrar'>
-                                <form onSubmit={onSubmit} >
-
+                                <form  onSubmit={onSubmit} >
                                     <TextField className='formularioCadastro' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                                     <TextField className='formularioCadastro' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                                     <Box marginTop={2} textAlign='center'>
@@ -109,15 +108,15 @@ function Login() {
                                         <Button type='submit' variant='contained' color='primary'>
                                             Entrar
                                         </Button>
-                                        </Box>
+                                    </Box>
                                     <Box marginTop={1} textAlign='center'>
-                                     <Link to='/cadastrousuario'>
-                                        <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
-                                    </Link>
+                                        <Link to='/cadastrousuario'>
+                                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                                        </Link>
                                     </Box>
                                 </form>
 
-                                
+
                             </div>
                         </Box>
                     </Box>

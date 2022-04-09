@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Button, Container, TextField, Typography } from '@material-ui/core'
+import { Button, Container, Grid, TextField, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom'
 import { buscaId, post, put } from '../../../service/Service'
 import Categoria from '../../../models/Categoria'
@@ -74,9 +74,7 @@ function CadastroCategoria() {
                 })
 
                 await put('/categoria', categoria, setCategoria, {
-                    headers: {
-                        'Authorization': token
-                    }
+                    headers: { 'Authorization': token }
                 })
 
                 toast.success('Categoria atualizada com sucesso', {
@@ -92,16 +90,24 @@ function CadastroCategoria() {
 
             } catch (error) {
                 console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade minima de caracteres")
+                toast.error('Erro, por favor verifique a quantidade minima de caracteres', 
+                {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
 
         } else {
 
             try {
                 await post(`/categoria`, categoria, setCategoria, {
-                    headers: {
-                        'Authorization': token
-                    }
+                    headers: { 'Authorization': token }
                 })
                 
                 toast.success('Categoria cadastrada com sucesso', {
@@ -117,7 +123,19 @@ function CadastroCategoria() {
                 
             } catch (error) {
                 console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade minima de caracteres")
+                toast.error('Erro, por favor verifique a quantidade minima de caracteres', 
+                {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
+                history.push("/formularioCategoria")
+    
             }
         }
         
@@ -126,39 +144,43 @@ function CadastroCategoria() {
     }
 
     function back() {
-        history.push('/categoria')
+        history.push('/categorias')
     }
 
     return (
+        <Grid className='backgroundCadastar'>
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro categoria</Typography>
-                <TextField
+                <Typography variant="h3" color="textSecondary" component="h1" align="center">Cadastrar categoria</Typography >
+                <TextField className='cadastrarCategoria'
                 value={categoria.nomec}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     id="nomec"
-                    label="nomec"
+                    label="nome"
                     variant="outlined"
                     name="nomec"
                     margin="normal"
                     fullWidth
+                    placeholder='Minímo de 5 caracteres'
                 />
 
                     <TextField
                     value={categoria.descricaoc}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     id="descricaoc"
-                    label="descricaoc"
+                    label="descricao"
                     variant="outlined"
                     name="descricaoc"
                     margin="normal"
                     fullWidth
+                    placeholder='Minímo de 30 caracteres'
                 />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" color="primary" className='botaoFinalizar'>
                     Finalizar
                 </Button>
             </form>
         </Container>
+        </Grid>
     )
 }
 
