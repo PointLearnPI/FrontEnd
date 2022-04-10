@@ -10,13 +10,11 @@
 }
 
 .margin {
-    margin-top: 15%;
-       
+    margin-top: 15%;      
 }
 
-
 .backgroundsn {
-    background-color: #FDF1CB;
+    background-color: #e6dcbf;
 }
 
 .fonttexto1 {
@@ -28,6 +26,12 @@
 .fonttexto2 {
     text-align: center;
     font-size: 25px;
-    background-color: #FDF1CB;
+    background-color: #e6dcbf;
     color: #033153;
+}
+
+.img {
+    width: 60%;
+    margin-left: 8cm;
+    
 }

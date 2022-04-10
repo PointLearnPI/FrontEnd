@@ -18,7 +18,7 @@ function Carrossel() {
     var items = [
         { img: "https://i.imgur.com/vgRpoWu.png" }, /*Alessandro */
         { img: "https://i.imgur.com/H8H64u4.png" },/*Bruno*/
-        { img: "https://i.imgur.com/ZUjNJvH.png" },/*Denise */
+        { img: "https://i.imgur.com/pWRhplZ.png" },/*Denise */
         { img: "https://i.imgur.com/2vgyhjM.png" },/*Domenica */
         { img: "https://i.imgur.com/KE47Zrt.png" },/*Edu */
         { img: "https://i.imgur.com/KLpFYyV.png" },/*Mayara */
@@ -31,6 +31,8 @@ function Carrossel() {
                  
             <Box  marginTop={20} marginLeft ={25}  marginRight={20} textAlign='left' >
                 
+            <img className="img"src="https://i.imgur.com/nPFr8Dl.png"  />
+
                 <h1 className="fonttexto1"> Quem queremos atingir ?</h1>
                 <p className="fonttexto2">
                     Nosso projeto se constitui em um e-commerce de cursos profissionalizantes para jovens de todas as regiões, pensamos em abordar assuntos e temas, cujo conhecimento são necessários em todas as áreas de atuação do mercado.
@@ -45,10 +47,9 @@ function Carrossel() {
                 
             <h1 className="fonttexto1"> O que é Learn Point ?</h1>
             <p className="fonttexto2">
-                Nosso projeto se constitui em um e-commerce de cursos profissionalizantes para jovens de todas as regiões, pensamos em abordar assuntos e temas, cujo conhecimento são necessários em todas as áreas de atuação do mercado.
-                Por nos preocuparmos com a acessibilidade da educação, inicialmente iremos oferecer grande parte de forma gratuita enquanto os pagos serão a preço de custo.
-                Para o futuro iremos retirar totalmente os cursos pagos de nossa plataforma e o pagamento começará ser efetuado a partir de pontos vindos de ações sociais com parceria com os eco pontos.
-                Assim, o projeto final  será a conversão de reciclagem em cursos profissionalizantes.
+            A Learn Point é um e-commerce de cursos profissionalizantes para jovens de todas as regiões do Brasil com idade de 18 até 24 anos. 
+            No brasil, mais de 31% da população dos jovens estão desempregados e sem nenhum tipo de instrução 
+            para o mercado de trabalho e a Learn Point vem com o intuito de encontrar essas pessoas e preenche-las com as habilidades necessárias para atender as vagas de entrada no mercado de trabalho.
             </p>
             </Box>
 
