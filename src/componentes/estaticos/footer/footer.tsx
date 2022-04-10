@@ -1,6 +1,7 @@
 import React from 'react';
 import GithubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import {Typography, Box, Grid } from '@material-ui/core';
 import './Footer.css'
 import { useSelector } from 'react-redux';
@@ -20,8 +21,8 @@ function Footer() {
                         </Box>
                         <Box>
                         <Box className='logosFooter' display="flex">
-                            <a href="https://instagram.com" target="_blank">
-                                <InstagramIcon className='logos' />
+                            <a href="https://www.ipea.gov.br/ods/ods4.html" target="_blank">
+                                <ScreenSearchDesktopIcon className='logos' />
                             </a>
                             <a href="https://github.com/PointLearnPI" target="_blank">
                                 <GithubIcon className='logos' />

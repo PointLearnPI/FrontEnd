@@ -54,7 +54,7 @@ function Carrossel() {
             </Box>
 
             
-            <Box  marginTop={10} marginLeft ={105}  marginRight={20} textAlign="left">
+            <Box  marginTop={20} marginLeft ={87}  marginRight={20} textAlign="left">
              
             <h1 className="fonttexto1"> Integrantes:</h1>
            
