@@ -17,15 +17,14 @@ function Navbar() {
     )
 
     let history = useHistory();
-
-    var navBarComponent
-
-    if (token !== "") {
-        navBarComponent =
+    return (
+        <>
             <AppBar className='corMenu' position="relative">
                 <Toolbar variant="regular">
                     <Box style={{ cursor: "pointer" }} >
+                    <Link className='link' to="/home">
                         <img className='logo' src="https://i.imgur.com/wUJX9nV.jpg" alt="" />
+                        </Link>
                     </Box>
 
                     <Box display="flex" justifyContent="start">
@@ -81,10 +80,6 @@ function Navbar() {
                     </Box>
                 </Toolbar>
             </AppBar>
-    }
-    return (
-        <>
-            {navBarComponent}
         </>
     )
 }
