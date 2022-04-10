@@ -83,7 +83,14 @@ function ListarProduto() {
                   <Link to={`/formularioProduto/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        Comprar
+                        atualizar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link to={`/deletarProduto/${post.id}`} className="text-decorator-none">
+                    <Box mx={1}>
+                      <Button variant="contained" size='small' color="secondary">
+                        deletar
                       </Button>
                     </Box>
                   </Link>

@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import ListarProduto from '../../componentes/produtos/listarProdutos/ListarProduto';
 
 function Home() {
 
@@ -24,23 +25,61 @@ function Home() {
 
                 <Grid alignItems="center" item xs={12}>
                     <Box justifyContent="center">
-                        <Box marginRight={1}>
-                        </Box>
-                        <section className="caixa-search">
-                            <input className='caixa-texto' type="text" name="" placeholder="Eu quero aprender..." />
-                            <a className="botao-search" href="#">
-                                <SearchIcon className="fa fa-plus-circle" />
-                            </a>
-                        </section>
                     </Box>
                 </Grid>
-                <Grid item xs={12} >
+                </Grid>
+                <Grid className='backgroundColor' container direction="row" justifyContent="flex-start" alignItems="center">
+                    <Grid className='marginHome' alignItems="flex-start" item xs={5}>
+                        <Box>
+                            <p className='bold'>
+                                Missão
+                            </p>
+                            </Box>
+                            <Grid alignItems="flex-start" item xs={5}>
+                                <Box>
+                                <p className='textoMissao'>
+                                Preparar e apoiar jovens e adultos nas suas carreiras, dando acesso conteúdos básicos e 
+profissionalizantes, e ao promovendo o cuidado ambiental, buscando reduzir a degradação do meio ambiente.
+                                </p>
+                                </Box>
+                            </Grid>
+                        
+                    </Grid>
+                </Grid>
+                <Grid container direction="row" justifyContent="center" alignItems="center">
+                <Grid className='ods4' alignItems="center" item xs={5}>
+                        <Box>
+                            <p className='bold'>
+                                ODS4
+                            </p>
+                            </Box>
+                            <Grid alignItems="center" item xs={5}>
+                                <Box>
+                                <p className='textoODS4'>
+                                Assegurar a educação inclusiva e equitativa e de qualidade, e promover oportunidades de aprendizagem ao longo da vida para todos
+                                </p>
+                                </Box>
+                            </Grid>
+                            </Grid>
+                </Grid>
+                <Grid container direction="row" justifyContent="flex-end" alignItems="flex-start">
+                <Grid className='pptu' alignItems="flex-start" item xs={5}>
+                        <Box>
+                            <p>
+                                Política de privacidade
+                            </p>
+                            </Box>
+                            <Grid alignItems="center" item xs={5}>
+                                <Box>
+                                <p>
+                                Termos de uso 
+                                </p>
+                                </Box>
+                            </Grid>
+                            </Grid>
 
                 </Grid>
-                <Grid xs={12} className='postagens'>
-                </Grid>
-
-            </Grid>
+            
 
         </>
     );
