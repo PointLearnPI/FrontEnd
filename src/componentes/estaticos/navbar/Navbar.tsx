@@ -60,7 +60,16 @@ function Navbar() {
 
                     <Box mx={1} style={{ cursor: "pointer" }}>
                         <Typography variant="h6" color="inherit">
-                            <Link className='link' to="/produtos">Cursos  </Link>
+                            <Link className='link' to="/categorias"> Categoria </Link>
+                        </Typography>
+                    </Box>
+                    <Typography variant="h6" className='barraNavbar'>
+                        |
+                    </Typography>
+
+                    <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Typography variant="h6" color="inherit">
+                            <Link className='link' to="/produtos"> Cursos </Link>
                         </Typography>
                     </Box>
                     <Typography variant="h6" className='barraNavbar'>
@@ -109,14 +118,6 @@ function Navbar() {
                                 <Box mx={1} style={{ cursor: "pointer" }}>
                                     <Typography variant="h6" color="inherit">
                                         <Link className='linkMenu' to="/formularioCategoria">Cadastrar categoria </Link>
-                                    </Typography>
-                                </Box>
-                            </MenuItem>
-
-                            <MenuItem onClick={handleClose}>
-                                <Box mx={1} style={{ cursor: "pointer" }}>
-                                    <Typography variant="h6" color="inherit">
-                                        <Link className='linkMenu' to="/categorias"> Categoria </Link>
                                     </Typography>
                                 </Box>
                             </MenuItem>

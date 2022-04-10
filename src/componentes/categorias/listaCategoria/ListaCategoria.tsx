@@ -47,6 +47,8 @@ function ListaCategoria() {
     getCategorias()
   }, [categorias.length])
 
+  
+
   return (
     <>
       {

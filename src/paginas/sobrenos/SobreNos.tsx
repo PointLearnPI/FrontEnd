@@ -18,7 +18,7 @@ function Carrossel() {
     var items = [
         { img: "https://i.imgur.com/vgRpoWu.png" }, /*Alessandro */
         { img: "https://i.imgur.com/H8H64u4.png" },/*Bruno*/
-        { img: "https://i.imgur.com/ZUjNJvH.png" },/*Denise */
+        { img: "https://i.imgur.com/pWRhplZ.png" },/*Denise */
         { img: "https://i.imgur.com/2vgyhjM.png" },/*Domenica */
         { img: "https://i.imgur.com/KE47Zrt.png" },/*Edu */
         { img: "https://i.imgur.com/KLpFYyV.png" },/*Mayara */
@@ -53,7 +53,7 @@ function Carrossel() {
             </Box>
 
             
-            <Box  marginTop={10} marginLeft ={105}  marginRight={20} textAlign="left">
+            <Box  marginTop={20} marginLeft ={87}  marginRight={20} textAlign="left">
              
             <h1 className="fonttexto1"> Integrantes:</h1>
            
