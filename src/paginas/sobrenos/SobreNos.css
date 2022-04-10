@@ -1,15 +1,33 @@
 .texto1 {
     font-size: 16px;
+    background-color: #033153;
+    margin-block-end: 30cm;
 }
 
 .tminput {
     width: 60%;
-}
-
-.textosn {
-    font-size: 16px;
+  
 }
 
 .margin {
     margin-top: 15%;
+       
+}
+
+
+.backgroundsn {
+    background-color: #FDF1CB;
+}
+
+.fonttexto1 {
+    text-align: center;
+    font-size: 30px;
+    color: #033153;
+}
+
+.fonttexto2 {
+    text-align: center;
+    font-size: 25px;
+    background-color: #FDF1CB;
+    color: #033153;
 }
