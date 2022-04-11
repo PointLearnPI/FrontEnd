@@ -46,6 +46,8 @@ function Navbar() {
         history.push('/login')
     }
 
+    
+
     return (
         <>
             <AppBar className='corMenu' position="absolute">

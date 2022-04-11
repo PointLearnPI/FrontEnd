@@ -14,7 +14,7 @@ function CadastroProduto() {
 
     let history = useHistory();
 
-    const { id } = useParams<{ id: string }>();
+    const { nome } = useParams<{ nome: string }>();
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
@@ -63,10 +63,10 @@ function CadastroProduto() {
 
     useEffect(() => {
         getCategorias()
-        if (id !== undefined) {
-            findByIdProduto(id)
+        if (nome !== undefined) {
+            findByIdProduto(nome)
         }
-    }, [id])
+    }, [nome])
 
     async function getCategorias() {
         await busca('/categoria', setCategorias, {
@@ -76,8 +76,8 @@ function CadastroProduto() {
         })
     }
 
-    async function findByIdProduto(id: string) {
-        await buscaId(`/produtos/${id}`, setProduto, {
+    async function findByIdProduto(nome: string) {
+        await buscaId(`/produto/nome/${nome}`, setProduto, {
             headers: {
                 'Authorization': token
             }
@@ -97,9 +97,9 @@ function CadastroProduto() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        if (id !== undefined) {
+        if (nome !== undefined) {
             try {
-                await put('/produtos', produto, setProduto, {
+                await put('/produto', produto, setProduto, {
                     headers: { 'Authorization': token }
                 })
                 toast.success('Curso Atualizado com sucesso', {
