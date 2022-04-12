@@ -72,7 +72,7 @@ function App() {
             <CadastroProduto />
           </Route>
 
-          <Route exact path='/formularioProduto/:nome'>
+          <Route exact path='/formularioProduto/:id'>
             <CadastroProduto />
           </Route>
 

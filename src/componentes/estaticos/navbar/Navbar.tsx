@@ -178,7 +178,6 @@ function Navbar() {
     return (
         <>
         {navbarComponent}
-            
         </>
     )
 }

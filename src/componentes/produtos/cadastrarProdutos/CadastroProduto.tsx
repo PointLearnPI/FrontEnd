@@ -14,7 +14,7 @@ function CadastroProduto() {
 
     let history = useHistory();
 
-    const { nome } = useParams<{ nome: string }>();
+    const { id } = useParams<{ id: string }>();
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
@@ -63,10 +63,10 @@ function CadastroProduto() {
 
     useEffect(() => {
         getCategorias()
-        if (nome !== undefined) {
-            findByIdProduto(nome)
+        if (id !== undefined) {
+            findByIdProduto(id)
         }
-    }, [nome])
+    }, [id])
 
     async function getCategorias() {
         await busca('/categoria', setCategorias, {
@@ -76,8 +76,8 @@ function CadastroProduto() {
         })
     }
 
-    async function findByIdProduto(nome: string) {
-        await buscaId(`/produto/nome/${nome}`, setProduto, {
+    async function findByIdProduto(id: string) {
+        await buscaId(`/produto/${id}`, setProduto, {
             headers: {
                 'Authorization': token
             }
@@ -97,7 +97,7 @@ function CadastroProduto() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        if (nome !== undefined) {
+        if (id !== undefined) {
             try {
                 await put('/produto', produto, setProduto, {
                     headers: { 'Authorization': token }
