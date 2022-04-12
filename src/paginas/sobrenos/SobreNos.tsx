@@ -29,7 +29,7 @@ function Carrossel() {
         <Grid container direction="row" alignItems="center" className="backgroundsn">
 
                  
-            <Box  marginTop={20} marginLeft ={22}  marginRight={20} textAlign='left' >
+            <Box  marginTop={20} marginLeft ={20}  marginRight={20} textAlign='left' >
                 
             <img className="img"src="https://i.imgur.com/nPFr8Dl.png"  />
 
@@ -54,7 +54,7 @@ function Carrossel() {
             </Box>
 
             
-            <Box  marginTop={20} marginLeft ={107}  marginRight={20} textAlign="left">
+            <Box  marginTop={20} marginLeft ={82}  marginRight={20} textAlign="left">
              
             <h1 className="fonttexto1"> Integrantes:</h1>
            
