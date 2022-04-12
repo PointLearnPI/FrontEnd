@@ -22,7 +22,7 @@ function Carrossel() {
         { img: "https://i.imgur.com/2vgyhjM.png" },/*Domenica */
         { img: "https://i.imgur.com/KE47Zrt.png" },/*Edu */
         { img: "https://i.imgur.com/KLpFYyV.png" },/*Mayara */
-        { img: "https://i.imgur.com/wzXq0Km.png" }, /*Natalia */
+        { img: "https://i.imgur.com/DAe3fg3.png" }, /*Natalia */
     ]
     return (
 
