@@ -46,99 +46,139 @@ function Navbar() {
         history.push('/login')
     }
 
-    
+    var navbarComponent
+
+    if(token != ""){
+        navbarComponent = <AppBar className='corMenu' position="absolute">
+        <Toolbar variant="regular">
+
+            <Box style={{ cursor: "pointer" }} >
+                <Link to="/home">
+                    <img className='logo' src="https://i.imgur.com/2OEcM9Y.png" alt="" />
+                </Link>
+            </Box>
+
+            <Box mx={2} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/sobrenos"> Sobre-nós </Link>
+                </Typography>
+            </Box>
+
+            <Typography variant="h6" className='barraNavbar'>
+                |
+            </Typography>
+
+            <Box mx={1} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/categorias"> Categoria </Link>
+                </Typography>
+            </Box>
+            <Typography variant="h6" className='barraNavbar'>
+                |
+            </Typography>
+
+            <Box mx={1} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/produtos"> Cursos </Link>
+                </Typography>
+            </Box>
+            <Typography variant="h6" className='barraNavbar'>
+                |
+            </Typography> 
+            
+            <div>
+                <Button className='maisNavbar'
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'false' : undefined}
+                    onClick={handleClick}
+                >
+                    Administrativo
+                </Button>
+                <Menu className='dentroMenu'
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                        'aria-labelledby': 'basic-button',
+                    }}
+                >
+
+
+                    <MenuItem onClick={handleClose}>
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='linkMenu' to="/formularioProduto"> Cadastrar cursos </Link>
+                            </Typography>
+                        </Box>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                            <Typography variant="h6" color="inherit">
+                                <Link className='linkMenu' to="/formularioCategoria">Cadastrar categoria </Link>
+                            </Typography>
+                        </Box>
+                    </MenuItem>
+                </Menu>
+            </div>
+
+            <Typography variant="h6" className='barraNavbar'>
+                |
+            </Typography>
+
+            <Box mx={2} style={{ cursor: "pointer" }}  onClick={goLogout}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/login">Sair</Link>
+                </Typography>
+            </Box>
+
+        </Toolbar>
+    </AppBar>
+    }else{
+        navbarComponent = <AppBar className='corMenu' position="absolute">
+        <Toolbar variant="regular">
+
+            <Box style={{ cursor: "pointer" }} >
+                <Link to="/home">
+                    <img className='logo' src="https://i.imgur.com/2OEcM9Y.png" alt="" />
+                </Link>
+            </Box>
+
+            <Box mx={2} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/sobrenos"> Sobre-nós </Link>
+                </Typography>
+            </Box>
+
+            <Typography variant="h6" className='barraNavbar'>
+                |
+            </Typography>
+
+            <Box mx={1} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/produtos"> Cursos </Link>
+                </Typography>
+            </Box>
+
+            <Typography variant="h6" className='barraNavbar'>
+                |
+            </Typography>
+
+            <Box mx={2} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                    <Link className='link' to="/login">Entrar</Link>
+                </Typography>
+            </Box>
+        </Toolbar>
+    </AppBar>
+    }
 
     return (
         <>
-            <AppBar className='corMenu' position="absolute">
-                <Toolbar variant="regular">
-
-                    <Box style={{ cursor: "pointer" }} >
-                        <Link to="/home">
-                            <img className='logo' src="https://i.imgur.com/2OEcM9Y.png" alt="" />
-                        </Link>
-                    </Box>
-
-
-                    <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6" color="inherit">
-                            <Link className='link' to="/categorias"> Categoria </Link>
-                        </Typography>
-                    </Box>
-                    <Typography variant="h6" className='barraNavbar'>
-                        |
-                    </Typography>
-
-                    <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6" color="inherit">
-                            <Link className='link' to="/produtos"> Cursos </Link>
-                        </Typography>
-                    </Box>
-                    <Typography variant="h6" className='barraNavbar'>
-                        |
-                    </Typography>
-
-
-                    <Box mx={2} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6" color="inherit">
-                            <Link className='link' to="/sobrenos"> Sobre-nós </Link>
-                        </Typography>
-                    </Box>
-                    <Typography variant="h6" className='barraNavbar'>
-                        |
-                    </Typography>
-
-                    <div>
-                        <Button className='maisNavbar'
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'false' : undefined}
-                            onClick={handleClick}
-                        >
-                            Administrativo
-                        </Button>
-                        <Menu className='dentroMenu'
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-
-
-                            <MenuItem onClick={handleClose}>
-                                <Box mx={1} style={{ cursor: "pointer" }}>
-                                    <Typography variant="h6" color="inherit">
-                                        <Link className='linkMenu' to="/formularioProduto"> Cadastrar cursos </Link>
-                                    </Typography>
-                                </Box>
-                            </MenuItem>
-                            <MenuItem onClick={handleClose}>
-                                <Box mx={1} style={{ cursor: "pointer" }}>
-                                    <Typography variant="h6" color="inherit">
-                                        <Link className='linkMenu' to="/formularioCategoria">Cadastrar categoria </Link>
-                                    </Typography>
-                                </Box>
-                            </MenuItem>
-                        </Menu>
-                    </div>
-
-                    <Box mx={2} style={{ cursor: "pointer" }}  onClick={goLogout}>
-                        <Typography variant="h6" color="inherit">
-                            <Link className='link' to="/login">Sair</Link>
-                        </Typography>
-                    </Box>
-
-                    <Box mx={2} style={{ cursor: "pointer" }}>
-                        <Typography variant="h6" color="inherit">
-                            <Link className='link' to="/login">Entrar</Link>
-                        </Typography>
-                    </Box>
-                </Toolbar>
-            </AppBar>
+        {navbarComponent}
+            
         </>
     )
 }
