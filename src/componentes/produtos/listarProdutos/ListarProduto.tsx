@@ -55,11 +55,14 @@ function ListarProduto() {
     <>
       {
         produtos.map(post => (
-          <Box m={2}>
+          <Box m={2} >
             <Card variant="outlined">
-              <CardContent>
+              <CardContent >
                 <Typography color="textSecondary" gutterBottom>
                   Produtos
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {post.categoria?.descricaoc}
                 </Typography>
                 <Typography variant="h5" component="h2">
                   {post.nomep}
@@ -68,28 +71,26 @@ function ListarProduto() {
                   {post.descricao}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {post.preco}
+                  R$: {post.preco}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {post.duracao}
+                  Duração: {post.duracao} horas
                 </Typography>
-                <Typography variant="body2" component="p">
-                  {post.categoria?.descricaoc}
-                </Typography>
+                
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
                   <Link to={`/formularioProduto/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button variant="contained" className="botao2" size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarProduto/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button variant="contained" size='small' className='botao'>
                         deletar
                       </Button>
                     </Box>

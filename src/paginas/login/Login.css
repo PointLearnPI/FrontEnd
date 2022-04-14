@@ -10,12 +10,10 @@
 
 .formularioEntrar {
     position: center;
-    background-color: white;
-    width: 400px;
+    background-color: #d5e5f1;
+    width: 500px;
     height: 250px;
     border-radius: 20px!important;
-    border: 2px solid;
-    border-color: white!important;
     padding: 9px;
 }
 
@@ -23,4 +21,14 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     margin-left: 38%;
+}
+.efeito-vidro1 {
+   
+    position: center;
+    text-align: center center !important;
+    bottom: 50px !important;
+    background: rgba(255,255,255,0.4) !important;
+    backdrop-filter: blur(1px) !important;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2) !important;
 }

@@ -72,7 +72,7 @@ function ListaCategoria() {
 
                   <Link to={`/formularioCategoria/${ categoria.id }`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button variant="contained" className="botao2" size='small' color="primary" >
                         Atualizar
                       </Button>
                     </Box>
@@ -80,7 +80,7 @@ function ListaCategoria() {
 
                   <Link to={`/deletarCategoria/${ categoria.id }`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button variant="contained" size='small' color="secondary" className='botao'>
                         Deletar
                       </Button>
                     </Box>

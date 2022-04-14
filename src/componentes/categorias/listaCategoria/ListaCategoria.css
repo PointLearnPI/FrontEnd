@@ -1,3 +1,13 @@
 .MuiCardContent-root {
     display: table !important;
 }
+.botao{
+    background-color: #af9b6e !important;
+    color: #fbefcb !important;
+    font-weight: bold !important;
+}
+.botao2{
+    color: #ffd97d !important;
+    background-color: #033153 !important;
+    font-weight: bold !important;
+}
